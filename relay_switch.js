@@ -4,6 +4,8 @@ const relay = new Gpio(7, 'out');
 
 const timeOn = +process.argv[3];
 
+console.log(timeOn);
+
 const toggleRelay = () => {
   const isOn = relay.readSync();
   console.log(isOn);
