@@ -1,6 +1,6 @@
 const { Gpio } = require('onoff');
 
-const relay = new Gpio(7, 'out');
+const relay = new Gpio(4, 'out');
 
 const timeOn = process.argv[2];
 
