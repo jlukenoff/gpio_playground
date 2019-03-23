@@ -11,10 +11,10 @@ const toggleRelay = () => {
   console.log(isOn);
   if (isOn === 0) {
     console.log('Relay turned on');
-    relay.writeSync(1);
+    relay.writeSync(0);
   } else {
     console.log('Relay turned off');
-    relay.writeSync(0);
+    relay.writeSync(1);
   }
 };
 
