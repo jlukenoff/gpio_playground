@@ -1,7 +1,7 @@
 const { Gpio } = require('onoff');
 
-const sensorOrangeWire = new Gpio(14, 'in');
-const sensorYellowWire = new Gpio(15, 'in');
+const sensorOrangeWire = new Gpio(14, 'in', 'both');
+const sensorYellowWire = new Gpio(15, 'in', 'both');
 
 sensorOrangeWire.watch((e, val) => {
   if (e) console.error(`Error detected from ORANGE (GPIO14): ${e}`);
