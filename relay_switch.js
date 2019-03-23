@@ -1,6 +1,6 @@
 const { Gpio } = require('onoff');
 
-const relay = new Gpio(4, 'out');
+const relay = new Gpio(4, 'high');
 
 const timeOn = process.argv[2];
 
@@ -10,13 +10,15 @@ const toggleRelay = () => {
   const isOn = relay.readSync();
   console.log(isOn);
   if (isOn === 1) {
-    console.log('Relay turned on');
     relay.writeSync(0);
+    console.log('Relay turned on');
   } else {
-    console.log('Relay turned off');
     relay.writeSync(1);
+    console.log('Relay turned off');
   }
 };
 
 toggleRelay();
-setTimeout(toggleRelay, timeOn);
+setTimeout(() => {
+  toggleRelay();
+}, timeOn);
