@@ -12,6 +12,7 @@ console.log('Time for relay to remain on: ', timeOn);
 const toggleRelay = () => {
   // get current state of relay
   const isOn = relay.readSync();
+
   if (isOn === 1) {
     relay.writeSync(0);
     console.log('Relay turned on');
