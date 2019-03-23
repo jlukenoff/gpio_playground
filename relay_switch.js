@@ -2,7 +2,7 @@ const { Gpio } = require('onoff');
 
 const relay = new Gpio(7, 'out');
 
-const timeOn = +process.argv[3];
+const timeOn = process.argv[2];
 
 console.log(timeOn);
 
