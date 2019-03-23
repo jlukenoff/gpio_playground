@@ -9,7 +9,7 @@ console.log(timeOn);
 const toggleRelay = () => {
   const isOn = relay.readSync();
   console.log(isOn);
-  if (isOn === 0) {
+  if (isOn === 1) {
     console.log('Relay turned on');
     relay.writeSync(0);
   } else {
