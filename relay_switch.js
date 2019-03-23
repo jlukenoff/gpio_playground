@@ -6,7 +6,8 @@ const timeOn = +process.argv[3];
 
 const toggleRelay = () => {
   const isOn = relay.readSync();
-  if (isOn) {
+  console.log(isOn);
+  if (isOn === 0) {
     relay.writeSync(1);
   } else {
     relay.writeSync(0);
