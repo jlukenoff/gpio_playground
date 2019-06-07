@@ -1,24 +1,20 @@
 const Gpio = require('pigpio').Gpio;
 
-const motorLeft = new Gpio(17, { mode: Gpio.OUTPUT });
-const motorRight = new Gpio(22, { mode: Gpio.OUTPUT });
+const motorRight = new Gpio(17, { mode: Gpio.OUTPUT });
+const motorLeft = new Gpio(22, { mode: Gpio.OUTPUT });
 
 let pulseWidth = 1000;
 let increment = 100;
 
 // clockwise?
-motorLeft.servoWrite(1000);
-motorRight.servoWrite(1000);
+motorLeft.servoWrite(2000);
+motorRight.servoWrite(600);
 
 setTimeout(() => {
-  // AntiClockwise?
-  motorLeft.servoWrite(2000);
-  motorRight.servoWrite(2000);
-  setTimeout(() => {
+ //  AntiClockwise
     motorLeft.servoWrite(0);
     motorRight.servoWrite(0);
-  }, 1000);
-}, 1000);
+}, 10000);
 const directions = ['FORWARD', 'RIGHT', 'BACK', 'left'];
 
 // setInterval(() => {
